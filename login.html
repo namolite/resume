@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<title>登录 | Login</title>
+        <link href="https://cdn.jsdelivr.net/gh/Dreamer-Paul/Kico-Style/kico.min.css" rel="stylesheet" type="text/css"/>
+        <link rel="stylesheet" href="./assets/css/login.css">
+        <link rel="stylesheet" href="./assets/css/cursor.css">
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script src="./assets/js/hito.js"></script>
+        <script src="./assets/js/login.js"></script>
+	</head>
+
+	<body>
+        <!--script>
+            var picnum = parseInt(Math.random()* 13 + 1);
+            document.write('<div class="bak" style="background-image: url(https://cdn.jsdelivr.net/gh/namolite/yingying@0.1/ph/'+picnum+'.jpg);"></div>');
+https://cdn.jsdelivr.net/gh/namolite/yingying@0.1/ph/1.jpg
+        </script-->
+        <div class="bak" style="background-image: url('./assets/img/nekoz.jpg')" ></div>
+		<div class="gobal">
+			<div class="loginBox loginAni" id="logBox">
+                <div class="loginTt text-center">Log In Account</div>
+                <!--form-->
+                <div id="main">
+				    <div class="input" ks-tag="left" ks-text="Your username">
+				        <input id="usrname" value placeholder="Username" oninput="value=this.value.replace(/[^\w_]/g,'');"/>
+				    </div>
+                    <div class="input" ks-tag="left" ks-text="Your password">
+				        <input id="passwd" value placeholder="Password" oninput="value=this.value.replace(/[^\w_]/g,'');"/>
+					</div>
+					<div class="cBox">
+						<input type="checkbox" id="rm">
+                        <span style="">Remember me</span>
+					</div>
+                </div>
+                <div id="err"></div>
+				<div id="buttons">
+                    <div class="btnLeft">
+                        <button class="btn small" id="btnL">Register</button>
+                    </div>
+                    <div class="btnRight">
+                        <button class="btn small" id="btnR">Sign in!</button>
+                    </div>			
+				</div>
+                <!--/form-->
+                <footer>
+                    <div class="fter">
+                        <p id="hitokoto">因为与你相遇之后，我的身边都是好事。</p>
+                    </div>
+                </footer>
+			</div>
+		</div>
+        
+        <script type="text/javascript">
+            function getHt() {
+                $('#hitokoto').html(rdHitokoto(hitokoto));
+            }
+            
+            var nextPage = regPg, incorrect = counter();
+            
+            $(document).ready(function(){
+                getHt();
+                //setTimeout(function(){$(".loading").hide();},1500);
+            });
+
+            
+            
+            $('#btnL').click(() => {
+                chPage(nextPage);
+                if(nextPage === regPg) {nextPage = loginPg} else {nextPage = regPg};
+            });
+ 
+            
+            // TODO AJAX Varify
+            const btns = document.querySelectorAll('button');
+            const resRez = document.getElementById('re');
+            let xRqst = null, isSending = false;
+            
+            
+            
+            
+            document.getElementById("btnR").onclick = function() {
+                if(nextPage === regPg) {vfySignin()} else {vfySignup();};
+                //console.log(inputVlu[0].value);
+            }
+            
+        </script>
+	</body>
+</html>

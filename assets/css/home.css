@@ -1,0 +1,127 @@
+:root {
+}
+*, :after, :before {
+    box-sizing: border-box;
+}
+a {
+    color: rgba(255,255,255,.75);
+    text-decoration: none;
+}
+a:hover{
+    color:#fff;
+}
+body {
+    margin: 0;
+    font-size: 20px;
+}
+ul {
+    margin-top: 0;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    padding-inline-start: 40px;
+}
+li {
+    display: list-item;
+    text-align: -webkit-match-parent;
+    float: left;
+    list-style: none;
+    margin-right: 30px;
+}
+p {
+    margin-bottom: 1rem;
+    margin-top: 0;
+}
+.bak {
+    width: 100%;
+    position: fixed;
+    left: 0;
+    top: 0;
+}
+.bak, body {
+    height: 100%;
+    background-size: cover;
+}
+.container {
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 7.5px;
+    padding-right: 7.5px;
+    width: 100%;
+}
+.bar {
+    margin: 10px;
+    left: 60%;
+    position: absolute;
+    top: 0;
+}
+.ent {
+    background: transparent;
+    border: 1px solid #fff;
+    border-radius: 5px;
+    color: #fff;
+    font-size: 120%;
+    padding: .8em 2.5em;
+    transition: color .25s ease-in-out,border-color .25s ease-in-out,background-color .25s ease-in-out;
+}
+.ent:hover {
+    background-color:hsla(0,0%,100%,.2);
+    color:#fff
+}
+.fix {
+    left: 0;
+    position: fixed;
+    right: 0;
+    z-index: 1030;
+    top: 0;
+}
+.golbal {
+    background-position: center 0;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+}
+.item {
+    padding-left: 20px;
+}
+.nav {
+    margin-left: 0!important;
+    background-color: hsla(0,0%,100%,.2);
+    color: #fff;
+    align-items: center;
+    display: flex;
+    padding: .5rem;
+}
+.sub {
+    bottom: 0;
+    height: 50%;
+    left: 0;
+    margin: auto;
+    position: absolute;
+    right: 0;
+    text-align: center;
+    top: 100px;
+    width: 80%;
+}
+.sub-main {
+    color: #fff;
+    line-height: 1.5em;
+    margin: .2em 0 .5em;
+    padding: .8em .5em 1em;
+    text-shadow: 0 4px 3px rgb(0 0 0 / 40%), 0 8px 13px rgb(0 0 0 / 10%), 0 18px 23px rgb(0 0 0 / 10%);
+}
+.tt-main {
+    color: #fff;
+    line-height: 1.5em;
+    margin: .2em 0 .5em;
+    padding: .8em .5em 1em;
+    text-shadow: 0 4px 3px rgb(0 0 0 / 40%), 0 8px 13px rgb(0 0 0 / 10%), 0 18px 23px rgb(0 0 0 / 10%);
+}
+.tt-sub {
+    color: #fff;
+    font-family: Ubuntu,Segoe UI,Microsoft Yahei,Microsoft Jhenghei,sans-serif;
+    font-size: 16px;
+    letter-spacing: .05em;
+    margin-bottom: 3em;
+}

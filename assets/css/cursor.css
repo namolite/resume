@@ -1,0 +1,9 @@
+body {
+    cursor: url("./assets/img/cursor/arrow.cur"), auto;}
+a:hover, label:hover {
+    cursor: url("./assets/img/cursor/hand.cur"), auto;}
+a:active {
+    cursor:url("./assets/img/cursor/hand-link.cur"), auto;}
+input:hover {
+    cursor:url("./assets/img/cursor/text.cur"), auto;}
+            

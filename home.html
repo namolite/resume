@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html" charset="UTF-8">
+		<title>主页 | Home</title>
+		<!--link href="https://cdn.jsdelivr.net/gh/Dreamer-Paul/Kico-Style/kico.min.css" rel="stylesheet" type="text/css"/-->
+        <link rel="stylesheet" href="./assets/css/cursor.css">
+        <link rel="stylesheet" href="./assets/css/home.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css">
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script src="./assets/js/hito.js"></script>
+        <script></script>
+	</head>
+	<body>
+        <div class="bak" style="background-image: url('./assets/img/home.jpg')" ></div>
+        <div class="golbal">
+            <div class="container">
+                <div class="header">
+                    <a href="" class="navbar-brand">namo's</a>
+                </div>
+                <div class="menu">
+                    <ul class="bar col-m-4 clear">
+                        <li class="item">
+                            <a class="link" href="./intro.html">
+                                <i class="icon fa fa-sign-in"></i>&nbsp; info
+                            </a>
+                        </li>
+                        <li class="item">
+                            <a class="link" href="./login.html">
+                                <i class="icon fa fa-sign-in"></i>&nbsp; sign up
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="container">
+                <div class="sub">
+                    <h1 class="tt-main">namo's</h1>
+                    <p class="tt-sub" id="hitokoto">因为与你相遇之后，我的身边都是好事。</p>
+                    <p>
+                        <a href="./sr.html" class="ent">Start</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <script type="text/javascript">
+        
+            function getHt() {
+                $('#hitokoto').html(rdHitokoto(hitokoto));
+            }
+                        
+            $(document).ready(function(){
+                getHt();
+            });
+        
+        </script>
+    </body>
+</html>

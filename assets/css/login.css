@@ -1,0 +1,102 @@
+* {
+    box-sizing: border-box;
+}
+.bak {
+    width: 100%;
+    position: fixed;
+    left: 0;
+    top: 0;
+}
+
+.bak, body {
+    height: 100%;
+    background-size: cover;
+}
+.loginBox {
+    height: 100%;
+    display: block;
+    position: fixed;
+    top: 0px;
+    right: 0px;
+    width: 400px;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    box-shadow: 0px 0px 20px rgb(0 0 0 / 50%);
+}
+.loginTt {
+    font-size: 35px;
+    color: #fff;
+    font-weight: 400;
+    text-shadow: 0px 0px 16px rgb(0 0 0 / 80%);
+    margin-bottom: 60px;
+}
+span {
+    color: #fff;
+}
+input {
+    margin: 0;
+    font: inherit;
+    border: 0;
+    background: transparent;
+    color: #fff;
+}
+button {
+    background-color: rgba(0, 0, 0, 0.4) !important;
+    color: #fff !important;
+}
+footer {
+    height: auto;
+    position: fixed;
+    bottom: 0;
+    color: #fff;
+}
+.input {
+    margin-bottom: 15px;
+    position: relative;
+    padding: 10px 16px;
+    background: rgba(0, 0, 0, 0.4);
+    border: 1px solid #000;
+    border-radius: 4px;
+    color: #fff;
+    box-shadow: none;
+    height: 46px;
+    line-height: 1.3333333;
+    cursor: text;
+    appearance: none;
+}
+.cBox {
+    color: white;
+    margin-bottom: 20px;
+}
+#err {
+    margin-bottom: 20px;
+    color: fff;
+}
+.btnRight {
+    margin-left: 34%;
+}
+.btnLeft, .btnRight {
+    width: 33%;
+    position: relative;
+    min-height: 1px;
+    padding-right: 15px;
+    padding-left: 15px;
+    float: left;
+}
+.fter {
+    margin-bottom: 50px;
+    white-space: nowrap;
+}
+.loginAni {
+	animation: login 1s;
+}
+
+@keyframes login {
+	0% {right: -400px;}
+	100% {right: 0px;}
+}
+@keyframes logout {
+    0% {right: 0px;}
+    50% {right: -400px;}
+	100% {right: -400px;}
+}
