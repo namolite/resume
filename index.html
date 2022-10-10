@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>react💫demo</title>
+  <link rel="icon" type="image/x-icon" href = "./access/favicon.ico">
+  <link href="https://cdn.jsdelivr.net/gh/Dreamer-Paul/Kico-Style/kico.min.css" rel="stylesheet" type="text/css"/>
+  <link rel="stylesheet" href="./access/login.css">
+  <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+  <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+  <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+</head>
+
+<body>
+  <!--div class="bak" style="background-image: url('./assets/img/nekoz.jpg')" ></div-->
+  <div id="g-o" class="gobal"></div>
+
+
+  <script type="text/babel">
+    class Login extends React.Component {
+      constructor(props) {
+        super(props)
+        this.state = {available: true}
+      }
+      render() {
+        const available = this.state
+        const {hitoStr} = this.props
+        return (
+          <div className="loginBox loginAni" id="logBox">
+            <div id="logIn" className="loginTt text-center">Log In Account</div>
+            <form action="">
+              <div id="main">
+                <div className="input" ks-tag="left" ks-text="Your username">
+                  <input id="usrname" ref={c => this.usr = c} placeholder="Username" onInput={this.restriction} onChange={this.saveFormData('username')} />
+                </div>
+                <div className="input" ks-tag="left" ks-text="Your password">
+                  <input id="passwd" ref={c => this.pw = c} placeholder="Password" onInput={this.restriction} onChange={this.saveFormData('password')} />
+                </div>
+                <div className="cBox">
+                  <input type="checkbox" id="rm" />
+                  <span>Remember me</span>
+                </div>
+              </div>
+            </form>
+            <div id="err"></div>
+            <div id="buttons">
+              <div className="btnLeft">
+                <button className="btn small" id="btnL">Register</button>
+              </div>
+              <div className="btnRight">
+                <button className="btn small" id="btnR">Sign in!</button>
+              </div>			
+            </div>
+            <footer>
+              <div className="fter">
+                <p id="hitokoto">{hitoStr}</p>
+              </div>
+            </footer>
+		  </div>
+        )
+      }
+      restriction = (event) => {
+        event.target.value = event.target.value.replace(/[^\w_]/g,'')
+      }
+      saveFormData = (dataType) => {
+        return (dataType)=> {}
+      }
+    }
+    const hitoPort = "因为与你相遇之后，我的身边都是好事。"
+    ReactDOM.render(<Login hitoStr={hitoPort} />, document.getElementById('g-o'))
+    document.addEventListener("visibilitychange", function() {
+      const link = document.querySelector("link[rel~='icon']")
+      document.visibilityState === "visible" ? (document.title = 'react💫demo', link.href = './access/favicon.ico') : (document.title = '喵喵~崩溃啦！', link.href = './access/failure.ico')
+    });
+  </script>
+</body>
+</html>
