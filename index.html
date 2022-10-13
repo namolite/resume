@@ -9,6 +9,7 @@
   <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
   <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
   <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+  <script src="./access/hito.js"></script>
 </head>
 
 <body>
@@ -20,7 +21,7 @@
     class Login extends React.Component {
       constructor(props) {
         super(props)
-        this.state = {available: true}
+        this.state = {available: true, usrname: '', passwd: '', rm: false}
       }
       render() {
         const available = this.state
@@ -28,27 +29,29 @@
         return (
           <div className="loginBox loginAni" id="logBox">
             <div id="logIn" className="loginTt text-center">Log In Account</div>
-            <form action="">
+            <React.StrictMode>
+            <form onSubmit={this.formSubmit}>
               <div id="main">
                 <div className="input" ks-tag="left" ks-text="Your username">
-                  <input id="usrname" ref={c => this.usr = c} placeholder="Username" onInput={this.restriction} onChange={this.saveFormData('username')} />
+                  <input id="usrname" placeholder="Username" onInput={this.restriction} onChange={this.saveFormData('usrname')} />
                 </div>
                 <div className="input" ks-tag="left" ks-text="Your password">
-                  <input id="passwd" ref={c => this.pw = c} placeholder="Password" onInput={this.restriction} onChange={this.saveFormData('password')} />
+                  <input id="passwd" placeholder="Password" onInput={this.restriction} onChange={this.saveFormData('passwd')} />
                 </div>
                 <div className="cBox">
-                  <input type="checkbox" id="rm" />
+                  <input type="checkbox" id="rm" value={false} onChange={(event) => {this.setState({rm:event.target.checked})}} />
                   <span>Remember me</span>
                 </div>
               </div>
             </form>
+          </React.StrictMode>
             <div id="err"></div>
             <div id="buttons">
               <div className="btnLeft">
-                <button className="btn small" id="btnL">Register</button>
+                <button className="btn small" onClick={this.formSubmit}>Sign in!</button>
               </div>
               <div className="btnRight">
-                <button className="btn small" id="btnR">Sign in!</button>
+                <button className="btn small" id="btnR">Register</button>
               </div>			
             </div>
             <footer>
@@ -56,21 +59,32 @@
                 <p id="hitokoto">{hitoStr}</p>
               </div>
             </footer>
-		  </div>
+		      </div>
         )
       }
       restriction = (event) => {
         event.target.value = event.target.value.replace(/[^\w_]/g,'')
       }
-      saveFormData = (dataType) => {
-        return (dataType)=> {}
+      saveFormData = (data) => {
+        // event.target.id == 'usrname' ? this.setState{usrname:event.target.value} : this.setState{passwd:event.target.value}
+        // this.setState({formData:{usrname:a, passwd:b}})
+        return (event) => {
+          this.setState({[data]:event.target.value})
+        }
+      }
+      formSubmit = (event) => {
+        event.preventDefault() 
+        // const {usrname, passwd, rm} = this.state
+        const st = this.state
+        console.log(st.usrname + st.passwd + st.rm)
       }
     }
-    const hitoPort = "因为与你相遇之后，我的身边都是好事。"
-    ReactDOM.render(<Login hitoStr={hitoPort} />, document.getElementById('g-o'))
+
+    ReactDOM.render(<Login hitoStr={fetchHitokoto(hitokoto)} />, document.getElementById('g-o'))
+    const constTitle = document.title
     document.addEventListener("visibilitychange", function() {
       const link = document.querySelector("link[rel~='icon']")
-      document.visibilityState === "visible" ? (document.title = 'react💫demo', link.href = './access/favicon.ico') : (document.title = '喵喵~崩溃啦！', link.href = './access/failure.ico')
+      document.visibilityState === "visible" ? (document.title = constTitle, link.href = './access/favicon.ico') : (document.title = '喵喵~崩溃啦！', link.href = './access/failure.ico')
     });
   </script>
 </body>
