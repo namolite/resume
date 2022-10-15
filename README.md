@@ -1,2 +1,3 @@
-# Spring2022
-实训项目
+# Bibliosoft🧇
+
+使用 React 重构实训项目。
